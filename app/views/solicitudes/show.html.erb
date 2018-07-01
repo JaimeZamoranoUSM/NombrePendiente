@@ -1,0 +1,14 @@
+<div style="width:80%;margin:0 auto;">
+<p>
+  <strong>Titulo:</strong>
+  <%= @solicitudes.titulo %>
+</p>
+
+<p>
+  <strong>Texto:</strong>
+  <%= @solicitudes.texto %>
+</p>
+
+<%= link_to 'Editar', edit_solicitude_path(@solicitudes) %> |
+<%= link_to 'Volver', solicitudes_path %>
+<div style="width:80%;margin:0 auto;">

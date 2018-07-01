@@ -1,0 +1,7 @@
+<h1>Bienvenido a la peor pagina del puto mundo</h1>
+<% if user_signed_in? %>
+  <p>Usuario Logueado: <%=current_user.nombre %></p>
+  <p>Tipo: <%=current_user.tipo %></p>
+<%else%>
+  <p>Inicie sesion para utilizar el sistema</p>
+<%end%>

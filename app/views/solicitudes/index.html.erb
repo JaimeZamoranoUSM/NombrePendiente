@@ -1,0 +1,19 @@
+<div style="width:80%;margin:0 auto;">
+<h1>Solicitudes de materiales</h1>
+
+<table>
+  <tr>
+    <th>Titulo</th>
+    <th>Texto</th>
+    <th></th>
+  </tr>
+
+  <% @solicitudes.each do |solicitudes| %>
+    <tr>
+      <td><%= solicitudes.titulo %></td>
+      <td><%= solicitudes.texto %></td>
+      <td><%= link_to 'Ver', solicitude_path(solicitudes) %></td>
+    </tr>
+  <% end %>
+</table>
+</div>
