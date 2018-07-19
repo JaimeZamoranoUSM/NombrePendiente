@@ -22,6 +22,11 @@
     </div>
 
     <div class="field">
+      <%= form.label :Fecha_deseada_de_materiales %>
+      <%= form.date_select :f_requerida, start_year: 2018%>
+    </div>
+
+    <div class="field">
       <%= form.submit "Aceptar", class:"btn be-color white"%>
       <%= link_to 'Cancelar', ruta, class:"btn"%>
     </div>
