@@ -30,7 +30,7 @@
         </div>
 
         <div class="field">
-          <% tipos={'Admin' =>'Admin','Personal de Obra'=>'Obra','Bodeguero'=>'Bodeguero'} %>
+          <% tipos={'Personal de Obra'=>'Obra','Bodeguero'=>'Bodeguero'} %>
           <%= f.label :tipo, "Tipo de Usuario" %><br />
           <%= f.select :tipo, tipos %>
         </div>
@@ -39,9 +39,6 @@
           <%= f.submit "Crear cuenta", class:"btn be-color white"%>
         </div>
       <% end %>
-      <div class="actions">
-        <%= render "devise/shared/links" %>
-      </div>
     </div>
   </div>
 </div>

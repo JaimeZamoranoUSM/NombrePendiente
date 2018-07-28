@@ -1,14 +1,36 @@
 <div style="width:80%;margin:0 auto;">
-<p>
-  <strong>Titulo:</strong>
-  <%= @solicitudes.titulo %>
-</p>
+<h1><%= @solicitudes.titulo %></h1>
 
-<p>
-  <strong>Texto:</strong>
+<p><strong>Descipcion:</strong>
   <%= @solicitudes.texto %>
 </p>
 
-<%= link_to 'Editar', edit_solicitude_path(@solicitudes) %> |
-<%= link_to 'Volver', solicitudes_path %>
+<p><strong>Estado:</strong>
+  <%= @solicitudes.estado %>
+</p>
+
+<p><strong>Solicitado por:</strong>
+  <%= @solicitudes.user.nombre %>
+</p>
+
+<p><strong>Fecha Solicitud:</strong>
+  <%= @solicitudes.created_at %>
+</p>
+
+<p><strong>Fecha Requerida:</strong>
+  <%= @solicitudes.f_requerida %>
+</p>
+
+<p><strong>Fecha Estimada:</strong>
+  <% if @solicitudes.f_estimada == nil %>
+    Sin definir
+  <%else%>
+    <%= @solicitudes.f_estimada %>
+  <%end%>
+</p>
+
+<% if current_user.tipo == "Bodeguero" %>
+  <%= link_to 'Actualizar', edit_solicitude_path(@solicitudes), class:"btn" %> |
+<%end%>
+<%= link_to 'Volver', solicitudes_path, class: "btn" %>
 <div style="width:80%;margin:0 auto;">

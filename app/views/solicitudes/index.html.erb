@@ -4,15 +4,17 @@
 <table>
   <tr>
     <th>Titulo</th>
-    <th>Texto</th>
+    <th>Estado</th>
+    <th>Fecha Requerida</th>
     <th></th>
   </tr>
 
   <% @solicitudes.each do |solicitudes| %>
     <tr>
       <td><%= solicitudes.titulo %></td>
-      <td><%= solicitudes.texto %></td>
-      <td><%= link_to 'Ver', solicitude_path(solicitudes) %></td>
+      <td><%= solicitudes.estado %></td>
+      <td><%= solicitudes.f_requerida %></td>
+      <td><%= link_to 'Ver', solicitude_path(solicitudes), class: "btn" %></td>
     </tr>
   <% end %>
 </table>

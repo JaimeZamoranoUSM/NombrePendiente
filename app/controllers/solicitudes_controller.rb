@@ -16,7 +16,7 @@ class SolicitudesController < ApplicationController
    end
 
   def create
-    @solicitudes = Solicitude.new(solicitudes_params)
+    @solicitudes = current_user.solicitudes.new(solicitudes_params)
 
     if @solicitudes.save
       redirect_to @solicitudes
@@ -37,6 +37,6 @@ class SolicitudesController < ApplicationController
 
   private
   def solicitudes_params
-    params.require(:solicitude).permit(:titulo, :texto)
+    params.require(:solicitude).permit(:titulo, :texto, :estado, :f_requerida, :f_estimada)
   end
 end
