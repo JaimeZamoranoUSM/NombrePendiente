@@ -19,15 +19,15 @@
 
     <div class="field">
       <%= form.text_area :texto, placeholder: "Texto", style:"height:200px;", class:"form-control" %>
-    </div>
+    </div><br/>
 
     <div class="field">
-      <%= form.label :Fecha_deseada_de_materiales %>
-      <%= form.date_select :f_requerida, start_year: 2018%>
-    </div>
+      <%= form.label :Fecha_deseada_de_materiales, class:"text-tamaño" %>
+      <%= form.date_select :f_requerida, start_year: 2018, use_month_numbers: true%>
+    </div><br/><br/>
 
     <div class="field">
       <%= form.submit "Aceptar", class:"btn be-color white"%>
-      <%= link_to 'Cancelar', ruta, class:"btn"%>
+      <%= link_to 'Cancelar', ruta, class:"btn btn-op2"%>
     </div>
   <% end %>

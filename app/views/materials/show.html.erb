@@ -1,0 +1,15 @@
+<div style="width:80%;margin:0 auto;">
+  <p><strong>Material:</strong>
+    <%= @materials.nombre %><br/><br/>
+  </p>
+
+  <p><strong>Cantidad:</strong>
+    <%= @materials.cantidad %>
+    <%= @materials.unidad %>
+  </p><br/><br/><br/>
+
+  <%= link_to 'Eliminar', material_path(@materials), method: :delete,
+            data: { confirm: '¿Esta seguro que quiere eliminar este articulo?' } , class: "btn btn-op2" %>
+  <%= link_to 'Actualizar', edit_material_path(@materials), class: "btn btn-op2" %>
+  <%= link_to 'Volver', materials_path, class: "btn btn-op2" %>
+</div>

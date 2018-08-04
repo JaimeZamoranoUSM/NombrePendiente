@@ -1,4 +1,6 @@
 class SolicitudesController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
     @solicitudes = Solicitude.all
   end

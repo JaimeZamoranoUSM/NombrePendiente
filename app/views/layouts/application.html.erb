@@ -23,6 +23,10 @@
               <li class="col-md">
                 <%= link_to 'Nueva Solicitud', new_solicitude_path %>
               </li>
+            <% else%>
+              <li class="col-md">
+                <%= link_to 'Ver Materiales', materials_path %>
+              </li>
             <%end%>
             <li class="col-md">
               <%= link_to 'Ver Solicitudes', solicitudes_path %>

@@ -1,11 +1,13 @@
-<h1>Bienvenido a la Pagina de Gestion de Materiales</h1>
-<% if user_signed_in? %>
-  <p>Usuario Logueado: <%=current_user.nombre %></p>
-  <% if current_user.tipo == "Obra" %>
-    <p>Tipo: Personal de Obra</p>
+<div style="width:80%;margin:0 auto;">
+  <h1>Bienvenido a la Pagina de Gestion de Materiales</h1>
+  <% if user_signed_in? %>
+    <p><strong>Usuario Logueado:</strong> <%=current_user.nombre %></p>
+    <% if current_user.tipo == "Obra" %>
+      <p><strong>Tipo:</strong> Personal de Obra</p>
+    <%else%>
+      <p><strong>Tipo:</strong> <%=current_user.tipo %></p>
+    <%end%>
   <%else%>
-    <p>Tipo: <%=current_user.tipo %></p>
+    <p>Inicie sesion para utilizar el sistema</p>
   <%end%>
-<%else%>
-  <p>Inicie sesion para utilizar el sistema</p>
-<%end%>
+</div>

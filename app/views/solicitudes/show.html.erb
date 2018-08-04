@@ -2,23 +2,23 @@
 <h1><%= @solicitudes.titulo %></h1>
 
 <p><strong>Descipcion:</strong>
-  <%= @solicitudes.texto %>
+  <%= @solicitudes.texto %><br/><br/>
 </p>
 
 <p><strong>Estado:</strong>
-  <%= @solicitudes.estado %>
+  <%= @solicitudes.estado %><br/><br/>
 </p>
 
 <p><strong>Solicitado por:</strong>
-  <%= @solicitudes.user.nombre %>
+  <%= @solicitudes.user.nombre %><br/><br/>
 </p>
 
 <p><strong>Fecha Solicitud:</strong>
-  <%= @solicitudes.created_at %>
+  <%= @solicitudes.created_at %><br/><br/>
 </p>
 
 <p><strong>Fecha Requerida:</strong>
-  <%= @solicitudes.f_requerida %>
+  <%= @solicitudes.f_requerida %><br/><br/>
 </p>
 
 <p><strong>Fecha Estimada:</strong>
@@ -27,10 +27,10 @@
   <%else%>
     <%= @solicitudes.f_estimada %>
   <%end%>
-</p>
+</p><br/><br/><br/>
 
 <% if current_user.tipo == "Bodeguero" %>
-  <%= link_to 'Actualizar', edit_solicitude_path(@solicitudes), class:"btn" %> |
+  <%= link_to 'Actualizar', edit_solicitude_path(@solicitudes), class:"btn btn-op2" %>
 <%end%>
-<%= link_to 'Volver', solicitudes_path, class: "btn" %>
+<%= link_to 'Volver', solicitudes_path, class: "btn btn-op2" %>
 <div style="width:80%;margin:0 auto;">

@@ -1,0 +1,36 @@
+<div style="width:80%;margin:0 auto;">
+  <h1>Agregar Nuevo Material al stock</h1>
+
+  <%= form_with(model: @materials, local: true) do |form| %>
+    <% if @materials.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@materials.errors.count, "Error") %> al ingresar el material:
+          </h2>
+          <ul>
+            <% @materials.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="field">
+        <%= form.text_field :nombre, placeholder: "Material a agregar", class:"form-control" %>
+      </div><br/>
+
+      <div class="field">
+        <%= form.text_field :unidad, placeholder: "Unidad del material", class:"form-control"%>
+      </div><br/>
+
+      <div class="field">
+        <%= form.label :cantidad, "Cantidades de Materiales en Stock:", class:"text-tamaño" %>
+        <%= form.number_field :cantidad, min: 0 %>
+      </div><br/><br/>
+
+      <div class="field">
+        <%= form.submit "Aceptar", class:"btn be-color white"%>
+        <%= link_to 'Cancelar', materials_path, class:"btn btn-op2"%>
+      </div>
+    <% end %>
+</div>

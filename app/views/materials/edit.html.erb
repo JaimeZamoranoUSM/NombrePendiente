@@ -1,0 +1,33 @@
+<div style="width:80%;margin:0 auto;">
+
+  <h1><%= @materials.nombre %></h1>
+  <p><strong>Cantidad actual: </strong>
+  <%= @materials.cantidad%>
+  <%= @materials.unidad%><br/><br/></p>
+
+  <%= form_with(model: @materials, local: true) do |form| %>
+    <% if @materials.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@materials.errors.count, "Error") %> al ingresar la solicitud:
+          </h2>
+          <ul>
+            <% @materials.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+  <div class="field">
+  <strong><%= form.label :cantidad,"Nueva Cantidad en Stock:" %></strong>
+    <%= form.number_field :cantidad, min: 0%>
+    <%= @materials.unidad%></p><br/>
+  </div>
+
+  <div class="field">
+    <%= form.submit "Aceptar", class:"btn be-color white"%>
+    <%= link_to 'Cancelar', material_path(@materials), class:"btn btn-op2"%>
+  </div>
+  <%end%>
+</div>

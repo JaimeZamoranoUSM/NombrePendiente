@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<div style="width:80%;margin:0 auto;">
+  <div class="w3-container">
+    <h1>Solicitudes de materiales</h1>
+      <table class="w3-table w3-striped w3-bordered">
+        <tr>
+          <th>Nombre</th>
+          <th>Cantidad</th>
+          <th>Unidad</th>
+          <th></th>
+        </tr>
+
+        <% @materials.each do |material| %>
+          <tr>
+            <td><%= material.nombre %></td>
+            <td><%= material.cantidad %></td>
+            <td><%= material.unidad %></td>
+            <td><%= link_to 'Ver',material_path(material), class:"btn" %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+
+  <div class="field">
+    <br/><br/><%= link_to 'Agregar', new_material_path, class: "btn btn-op2" %>
+  </div>
+</div>

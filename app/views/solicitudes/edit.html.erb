@@ -1,7 +1,7 @@
 <div style="width:80%;margin:0 auto;">
   <h1><%= @solicitudes.titulo %></h1>
-  <p><strong>Fecha Requerida: </strong><%= @solicitudes.f_requerida%></p>
-  <p><strong>Estado Actual: </strong><%= @solicitudes.estado%></p>
+  <p><strong>Fecha Requerida: </strong><%= @solicitudes.f_requerida%><br/><br/></p>
+  <p><strong>Estado Actual: </strong><%= @solicitudes.estado%><br/><br/></p>
   <%= form_with(model: @solicitudes, local: true) do |form| %>
     <% if @solicitudes.errors.any? %>
         <div id="error_explanation">
@@ -19,17 +19,17 @@
   <div class="field">
     <% estados={'Falta de Stock'=>'Falta de Stock','Materiales Disponible'=>'Materiales Disponible'} %>
     <strong><%= form.label :estado, "Nuevo Estado:" %></strong>
-    <%= form.select :estado, estados %>
+    <%= form.select :estado, estados %><br/><br/>
   </div>
 
   <div class="field">
   <strong><%= form.label :f_estimada,"Fecha Estimada de Materiales:" %></strong>
     <%= form.date_select :f_estimada, start_year: 2018, include_blank: true, use_month_numbers: true%>
-  </div>
+  </div><br/><br/><br/>
 
   <div class="field">
     <%= form.submit "Aceptar", class:"btn be-color white"%>
-    <%= link_to 'Cancelar', solicitudes_path, class:"btn"%>
+    <%= link_to 'Cancelar', solicitude_path(@solicitudes), class:"btn btn-op2"%>
   </div>
   <%end%>
 </div>
