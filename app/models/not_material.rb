@@ -1,0 +1,2 @@
+class NotMaterial < ApplicationRecord
+end

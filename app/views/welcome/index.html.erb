@@ -4,6 +4,8 @@
     <p><strong>Usuario Logueado:</strong> <%=current_user.nombre %></p>
     <% if current_user.tipo == "Obra" %>
       <p><strong>Tipo:</strong> Personal de Obra</p>
+    <%elsif current_user.tipo == "Compra" %>
+      <p><strong>Tipo:</strong> Encargado de Compra</p>
     <%else%>
       <p><strong>Tipo:</strong> <%=current_user.tipo %></p>
     <%end%>

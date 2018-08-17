@@ -1,8 +1,12 @@
 class SolicitudesController < ApplicationController
   before_action :authenticate_user!
-  
+
   def index
-    @solicitudes = Solicitude.all
+    if current_user.tipo == 'Bodeguero'
+      @solicitudes = Solicitude.all
+    else
+      @solicitudes = Solicitude.where("user_id = ?", current_user.id)
+    end
   end
 
   def show
@@ -11,6 +15,7 @@ class SolicitudesController < ApplicationController
 
   def new
      @solicitudes = Solicitude.new
+     @materials = Material.all
   end
 
   def edit
@@ -39,6 +44,6 @@ class SolicitudesController < ApplicationController
 
   private
   def solicitudes_params
-    params.require(:solicitude).permit(:titulo, :texto, :estado, :f_requerida, :f_estimada)
+    params.require(:solicitude).permit(:titulo, :texto, :estado, :f_requerida, :f_estimada, :materials)
   end
 end

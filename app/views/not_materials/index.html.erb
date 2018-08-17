@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<div style="width:80%;margin:0 auto;">
+  <div class="w3-container">
+    <h1>Materiales Faltantes</h1>
+      <table class="w3-table w3-striped w3-bordered">
+        <tr>
+          <th>Nombre</th>
+          <th>Cantidad</th>
+          <th>Unidad</th>
+          <th></th>
+        </tr>
+
+        <% @notmaterials.each do |notmaterial| %>
+          <tr>
+            <td><%= notmaterial.nombre %></td>
+            <td><%= notmaterial.cantidad %></td>
+            <td><%= notmaterial.unidad %></td>
+            <td><%= link_to 'Ver',not_material_path(notmaterial), class:"btn" %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+
+  <div class="field">
+    <br/><br/><%= link_to 'Crear Orden', new_not_material_path, class: "btn btn-op2" %>
+  </div>
+</div>
