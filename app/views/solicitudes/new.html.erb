@@ -1,5 +1,5 @@
 <div style="width:80%;margin:0 auto;">
-  <h1>Ingrese nueva solicitud</h1>
+  <h1>Ingrese nueva Solicitud</h1>
   <%= form_with(model: @solicitudes, local: true) do |form| %>
     <% if @solicitudes.errors.any? %>
         <div id="error_explanation">
@@ -15,11 +15,11 @@
       <% end %>
 
       <div class="field">
-        <%= form.text_field :titulo, placeholder: "Titulo", class:"form-control" %>
+        <%= form.text_field :titulo, placeholder: "Nombre Identificador", class:"form-control" %>
       </div>
 
       <div class="field">
-        <%= form.text_area :texto, placeholder: "Texto", style:"height:200px;", class:"form-control" %>
+        <%= form.text_area :texto, placeholder: "Solicitud", style:"height:200px;", class:"form-control" %>
       </div><br/>
 
       <div class="field">
@@ -27,15 +27,8 @@
         <%= form.date_select :f_requerida, start_year: 2018, use_month_numbers: true%>
       </div><br/><br/>
 
-
       <div class="field">
-        <%= form.label :Material %>
-        <%= form.collection_select :nombre, @materials, :id, :nombre, placeholder: "Material"%>
-      </div>
-
-
-      <div class="field">
-        <%= form.submit "Aceptar", class:"btn be-color white"%>
+        <%= form.submit "Siguiente", class:"btn be-color white"%>
         <%= link_to 'Cancelar', root_path, class:"btn btn-op2"%>
       </div>
     <% end %>

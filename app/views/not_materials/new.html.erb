@@ -1,0 +1,38 @@
+<div style="width:80%;margin:0 auto;">
+
+  <h1><%= "Pedir Material a comprar" %></h1>
+  <%= form_with(model: @notmaterials, local: true) do |form| %>
+    <% if @notmaterials.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@notmaterials.errors.count, "Error") %> al ingresar la solicitud:
+          </h2>
+          <ul>
+            <% @notmaterials.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+  <div class="field">
+    <strong><%= "Material:" %><strong>
+    <%= form.collection_select :nombre, @materials , :nombre, :nombre %>
+  </div>
+
+  <div class="field">
+  <strong><%= form.label :cantidad,"Cantidad a pedir:" %></strong>
+    <%= form.number_field :cantidad, min: 0%>
+  </div>
+
+  <div class="field">
+  <strong><%= form.label :cantidad,"Unidad:" %></strong>
+      <%= form.text_field :unidad%><br/><br/>
+  </div>
+
+  <div class="field">
+    <%= form.submit "Aceptar", class:"btn be-color white"%>
+    <%= link_to 'Cancelar', materials_path, class:"btn btn-op2"%>
+  </div>
+  <%end%>
+</div>

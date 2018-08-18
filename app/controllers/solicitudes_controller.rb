@@ -15,7 +15,6 @@ class SolicitudesController < ApplicationController
 
   def new
      @solicitudes = Solicitude.new
-     @materials = Material.all
   end
 
   def edit
@@ -24,7 +23,6 @@ class SolicitudesController < ApplicationController
 
   def create
     @solicitudes = current_user.solicitudes.new(solicitudes_params)
-
     if @solicitudes.save
       redirect_to @solicitudes
     else

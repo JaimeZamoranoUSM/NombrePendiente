@@ -10,12 +10,9 @@ class NotMaterialsController < ApplicationController
   end
 
   def new
-    @notmaterials = NotMaterial.new
+    @materials = Material.all
+    @notmaterials = NotMaterial.new()
   end
-
-  def edit
-    @notmaterials = NotMaterial.find(params[:id])
-   end
 
   def create
     @notmaterials = NotMaterial.new(notmaterials_params)
@@ -27,25 +24,8 @@ class NotMaterialsController < ApplicationController
     end
   end
 
-  def update
-    @notmaterials = NotMaterial.find(params[:id])
-
-    if @notmaterials.update(notmaterials_params)
-      redirect_to @notmaterials
-    else
-      render 'edit'
-    end
-  end
-
-  def destroy
-      @notmaterials = NotMaterial.find(params[:id])
-      @notmaterials.destroy
-
-      redirect_to not_materials_path
-    end
-
   private
   def notmaterials_params
-    params.require(:notmaterial).permit(:nombre, :cantidad, :unidad)
+    params.require(:not_material).permit(:nombre, :cantidad, :unidad)
   end
 end

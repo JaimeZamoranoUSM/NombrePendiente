@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<div style="width:80%;margin:0 auto;">
+  <div class="w3-container">
+    <h1>Ordenes Realizadas</h1>
+      <table class="w3-table w3-striped w3-bordered">
+        <tr>
+          <th>Nombre Identificador</th>
+          <th>Material Ordenado</th>
+          <th>Proveedor</th>
+          <th></th>
+        </tr>
+
+        <% @orders.each do |order| %>
+          <tr>
+            <td><%= order.tituto %></td>
+            <td><%= order.nombre %></td>
+            <td><%= order.proveedor %></td>
+            <td><%= link_to 'Ver',order_path(order), class:"btn" %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+
+</div>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tituto: MyString
+  comentario: MyText
+  nombre: MyText
+  cantidad: 1
+  unidad: MyString
+  string: MyString
+  proveedor: MyString
+
+two:
+  tituto: MyString
+  comentario: MyText
+  nombre: MyText
+  cantidad: 1
+  unidad: MyString
+  string: MyString
+  proveedor: MyString

@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources :solicitudes
   resources :materials
   resources :not_materials
+  resources :orders
   root 'welcome#index'
 end

@@ -1,0 +1,24 @@
+<div style="width:80%;margin:0 auto;">
+<h1><%= @orders.tituto %></h1>
+
+<p><strong>Enviado a Proveedor:</strong>
+  <%= @orders.proveedor %><br/><br/>
+</p>
+
+<p><strong>Material Pedido:</strong>
+  <%= @orders.nombre %>
+  <%= @orders.cantidad %>
+  <%= @orders.unidad %><br/><br/>
+</p>
+
+<p><strong>Fecha de Envio:</strong>
+  <%= @orders.created_at %><br/><br/>
+</p>
+
+<p><strong>Comentario:</strong>
+  <%= @orders.comentario %><br/><br/>
+</p><br/><br/><br/>
+
+
+<%= link_to 'Volver', orders_path, class: "btn btn-op2" %>
+<div style="width:80%;margin:0 auto;">

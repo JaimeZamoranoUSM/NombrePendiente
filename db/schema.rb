@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_16_212058) do
+ActiveRecord::Schema.define(version: 2018_08_17_232756) do
 
   create_table "has_materials", force: :cascade do |t|
     t.integer "solicitude_id"
@@ -33,6 +33,18 @@ ActiveRecord::Schema.define(version: 2018_08_16_212058) do
     t.text "nombre"
     t.integer "cantidad"
     t.string "unidad"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "tituto"
+    t.text "comentario"
+    t.text "nombre"
+    t.integer "cantidad"
+    t.string "unidad"
+    t.string "string"
+    t.string "proveedor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

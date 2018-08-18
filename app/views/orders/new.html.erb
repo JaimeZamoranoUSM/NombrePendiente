@@ -1,0 +1,49 @@
+<div style="width:80%;margin:0 auto;">
+  <h1>Ingrese Nueva Orden de Compra</h1>
+  <%= form_with(model: @orders, local: true) do |form| %>
+    <% if @orders.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@orders.errors.count, "Error") %> al ingresar la orden:
+          </h2>
+          <ul>
+            <% @orders.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="field">
+        <%= form.text_field :tituto, placeholder: "Nombre Identificador", class:"form-control" %>
+      </div>
+
+      <div class="field">
+        <%= form.text_area :comentario, placeholder: "Comentario", style:"height:200px;", class:"form-control" %>
+      </div><br/>
+
+      <div class="field">
+        <%= form.text_field :proveedor, placeholder: "Proveedor a Enviar", class:"form-control" %>
+      </div><br/>
+
+      <div class="field">
+        <strong><%= "Material Deseado:" %><strong>
+        <%= form.collection_select :nombre, @notmaterials , :nombre, :nombre %><br/><br/>
+      </div>
+
+      <div class="field">
+      <strong><%= form.label :cantidad,"Cantidad a Ordenar:" %></strong>
+        <%= form.number_field :cantidad, min: 0%><br/><br/>
+      </div>
+
+      <div class="field">
+      <strong><%= form.label :cantidad,"Unidad Deseada:" %></strong>
+          <%= form.text_field :unidad%><br/><br/>
+      </div>
+
+      <div class="field">
+        <%= form.submit "Siguiente", class:"btn be-color white"%>
+        <%= link_to 'Cancelar', not_materials_path, class:"btn btn-op2"%>
+      </div>
+    <% end %>
+</div>
