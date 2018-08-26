@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Laudus</h1>
+
+<h3><body><center>
+Esta pestaña realiza conexión y extracción de datos de otras páginas, y, dado que Laudus es un servicio privado,
+se utiliza una página falsa para simular el envío de datos, en este caso es 'JSonPlaceholder'
+</center></body></h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nombre</th>
+      <th>Email</th>
+      <th>Mensaje</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @laudus.each do |laudu| %>
+      <tr>
+        <td><%= laudu["postId"] %></td>
+        <td><%= laudu["name"] %></td>
+        <td><%= laudu["email"] %></td>
+        <td><%= laudu["body"] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
