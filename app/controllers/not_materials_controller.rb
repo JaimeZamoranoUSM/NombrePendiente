@@ -10,7 +10,7 @@ class NotMaterialsController < ApplicationController
   end
 
   def new
-    @materials = Material.all
+    @materials = Material.find(params[:idd])
     @notmaterials = NotMaterial.new()
   end
 

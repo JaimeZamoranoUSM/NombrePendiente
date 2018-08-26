@@ -16,14 +16,14 @@
             <td><%= material.nombre %></td>
             <td><%= material.cantidad %></td>
             <td><%= material.unidad %></td>
-            <td><%= link_to 'Ver',material_path(material), class:"btn" %>
+            <td><%= link_to 'Ver',material_path(material), class:"btn" %> |
+            <%= link_to 'Pedir',{:controller => "not_materials", :action => "new", :idd => material.id}, class:"btn" %></td>
           </tr>
         <% end %>
       </table>
     </div>
 
   <div class="field">
-    <br/><%= link_to 'Agregar Material', new_material_path, class: "btn btn-op2" %> |
-    <%= link_to 'Pedir Materiales', new_not_material_path(), class:"btn btn-op2" %>
+    <br/><%= link_to 'Agregar Material', new_material_path, class: "btn btn-op2" %>
   </div>
 </div>

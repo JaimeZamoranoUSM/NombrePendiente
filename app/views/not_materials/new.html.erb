@@ -1,6 +1,6 @@
 <div style="width:80%;margin:0 auto;">
 
-  <h1><%= "Pedir Material a comprar" %></h1>
+  <h1><%= "Pedir Material a Comprar" %></h1>
   <%= form_with(model: @notmaterials, local: true) do |form| %>
     <% if @notmaterials.errors.any? %>
         <div id="error_explanation">
@@ -15,19 +15,20 @@
         </div>
       <% end %>
 
-  <div class="field">
-    <strong><%= "Material:" %><strong>
-    <%= form.collection_select :nombre, @materials , :nombre, :nombre %>
-  </div>
+  <p><strong>Material:</strong>
+    <%= @materials.nombre %>
+  </p>
+
+  <p><strong>Cantidad Actual:</strong>
+    <%= @materials.cantidad %>
+    <%= @materials.unidad %>
+  </p>
 
   <div class="field">
-  <strong><%= form.label :cantidad,"Cantidad a pedir:" %></strong>
-    <%= form.number_field :cantidad, min: 0%>
-  </div>
-
-  <div class="field">
-  <strong><%= form.label :cantidad,"Unidad:" %></strong>
-      <%= form.text_field :unidad%><br/><br/>
+  <strong><%= form.label :cantidad,"Cantidad a Pedir:" %></strong>
+    <%= form.number_field :cantidad, min: 0, :value => 0%>
+    <%= form.hidden_field :nombre, value: @materials.nombre %>
+    <%= form.hidden_field :unidad, value: @materials.unidad %><br/><br/>
   </div>
 
   <div class="field">

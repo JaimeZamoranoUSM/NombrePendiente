@@ -1,4 +1,3 @@
 class NotMaterial < ApplicationRecord
-    validates :cantidad, presence: true
-    validates :unidad, presence: true
+  validates :cantidad, presence: true
 end
